@@ -42,6 +42,127 @@ def inicio():
     print("")
     input("\t\t--------PRESIONE ENTER PARA REGRESAR AL MENU------")
     menu()
+#=====================================SERVICIOS================================================================#
+def servicios_menu():
+    os.system("cls")
+    op = 0
+    s = Servicios()
+    list = ["Nuevo Servicio a Agregar  ","Mostrar Servicios  ","Modificar Servicios ","Eliminar Servicio  ","Atras  "]
+    while(op not in [1,2,3,4,5]):
+        print("/////////////////////////////////////////////////////////////////////////")
+        print("\n==============SERVICIOS DE LA CLINICA SAN JUAN DE DIOS=================\n")
+        print("/////////////////////////////////////////////////////////////////////////")
+        print("\n1.- {}\n\n2.- {}\n\n3.- {}\n\n4.- {}\n\n5.- {}\n\n".format(list[0],list[1],list[2],list[3],list[4]))
+        op = input("\n\tIngrese una opcion: ")
+        try:
+            op = int(op)
+            if op not in [1,2,3,4,5]:
+                print("\n\tOpcion incorrecta, Vuelva a intentarlo\n")
+                time.sleep(2)
+                os.system("cls")
+        except ValueError:
+            print("\n==========================INGRESE SOLO DIGITOS===========================\n")
+            time.sleep(3)
+            os.system("cls")
+            op = 0
+    if(op == 1):
+        s.NuevoServicio()
+    elif(op == 2):
+        s.MostrarServicio()
+    elif(op == 3):
+        s.ModificarServicio()
+    elif(op == 4):
+        s.EliminarServicio()
+    elif(op == 5):
+        menu()
+class Servicios:
+    def __init__(self):
+        self.servicio=""
+        self.adicional=""
+
+    def NuevoServicio(self):
+        os.system("cls")
+        print("/////////////////////////////////////////////////////////////////////////")
+        print("=======================NUEVO SERVICIO A AGREGAR==========================")
+        print("/////////////////////////////////////////////////////////////////////////")
+        servicionuevo=input("\m\tIngrese nuevo servicio:   \n")
+        con = sqlite3.connect("Clinica-San-Juan-de-Dios.s3db")
+        cursor = con.cursor()
+        cursor.execute("insert into Registro (Servicios) values ('"+servicionuevo+"')")
+        con.commit()
+        con.close()
+        print("\n//////////////////////////////////////////////////////////////////////////")
+        print("\n//////////////////NUEVO SERVICIO REGISTRADO CON EXITO/////////////////////\n")
+        print("//////////////////////////////////////////////////////////////////////////")
+        input("\n------------------Presione enter para regresar al menu--------------------\n")
+        os.system("cls")
+        servicios_menu()
+
+    def MostrarServicio(self):
+        os.system("cls")
+        print("//////////////////////////////////////////////////////////////////////////")
+        print("===============SERVICIOS DE LA CLINICA SAN JUAN DE DIOS===================")
+        print("//////////////////////////////////////////////////////////////////////////")
+        con = sqlite3.connect("Clinica-San-Juan-de-Dios.s3db")
+        cursor = con.cursor()
+        cursor.execute("SELECT * from Registro")
+        print("\n==========================================================================\n")
+        print("=================NUMERO=====================SERVICIO======================\n")
+        for i in cursor:
+            print("\t\t   ",i[0],"\t\t\t",i[1])
+        con.close()
+        print("\n/////////////////////////////////////////////////////////////////////////")
+        input("\n-------------------Presione enter para regresar al menu------------------")
+        os.system("cls")
+        servicios_menu()
+    def ModificarServicio(self):
+        os.system("cls")
+        print("/////////////////////////////////////////////////////////////////////////")
+        print("=============MODIFICAR SERVICICIOS CLINICA SAN JUAN DE DIOS==============")
+        print("/////////////////////////////////////////////////////////////////////////")
+        con = sqlite3.connect("Clinica-San-Juan-de-Dios.s3db")
+        cursor = con.cursor()
+        cursor.execute("SELECT * from Registro")
+        print("\n==========================================================================\n")
+        print("=================NUMERO=====================SERVICIO======================\n")
+        for i in cursor:
+            print("  \t\t",i[0],"\t\t\t",i[1])
+        print("")
+        codigo=input("\n\tSeleccione numero a modificar:  ")
+        print("\n\tIngrese los datos a modificar\n")
+        servicionuevo=input("\tIngrese nuevo servicio:   ")
+        cursor.execute("update Registro set Servicios ='"+servicionuevo+"' where ID = '"+codigo+"'")
+        con.commit()
+        print("\n//////////////////////////////////////////////////////////////////////////")
+        print("\n==================SERVICIO MODIFICADO EXITOSAMENTE=======================\n")
+        print("\n//////////////////////////////////////////////////////////////////////////")
+        input("-----------------Presione enter para regresar al menu--------------------")
+        os.system("cls")
+        con.close()
+        servicios_menu()
+
+    def EliminarServicio(self):
+        os.system("cls")
+        print("/////////////////////////////////////////////////////////////////////////")
+        print("===============ELIMINAR SERVICIO CLINICA SAN JUAN DE DIOS================")
+        print("/////////////////////////////////////////////////////////////////////////\n")
+        con = sqlite3.connect("Clinica-San-Juan-de-Dios.s3db")
+        cursor = con.cursor()
+        cursor.execute("SELECT * from Registro")
+        print("=================NUMERO=====================SERVICIO======================\n")
+        for i in cursor:
+            print("  \t\t",i[0],"\t\t\t",i[1])
+        print("\n===========================================================================\n")
+        codigo=input("\tELIJA EL SERVICIO QUE DESEA ELIMINAR:  ")
+        cursor.execute("delete from Registro where ID = '"+codigo+"'")
+        con.commit()
+        print("\n//////////////////////////////////////////////////////////////////////////")
+        print("=====================SERVICIO ELIMINADO EXITOSAMENTE=======================")
+        print("///////////////////////////////////////////////////////////////////////////")
+        input("\n-----------------Presione enter para regresar al menu----------------------")
+        os.system("cls")
+        con.close()
+        registro_menu()
 
 def servicios():
     op = "0"
