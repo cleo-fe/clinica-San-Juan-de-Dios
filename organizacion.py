@@ -217,27 +217,21 @@ class Registro:
 
     def mostrar(self):
         os.system("cls")
-        print("\t============REGISTRO CLINICA SAN JUAN DE DIOS==============")
+        print("///////////////////////////////////////////////////////////////////////////////")
+        print("=======================REGISTRO CLINICA SAN JUAN DE DIOS=======================")
+        print("///////////////////////////////////////////////////////////////////////////////")
         con = sqlite3.connect("pacientes.s3db")
         cursor = con.cursor()
         cursor.execute("SELECT * from Registros")
+        print("\nNUMERO=============NOMBRES================DNI=========EDAD=========SERVICIO== \n")
         for i in cursor:
-            print("============================================================")
-            print("Historia Clinica Numero:" ,i[0])
-            print("Servicio:" , i[1])
-            print("Nombre:" ,i[2])
-            print("Apellido Paterno:" ,i[3])
-            print("Apellido Materno:" ,i[4])
-            print("DNI:" ,i[5])
-            print("Edad:",i[6])
-            print("Peso:" ,i[7])
-            print("Especialidad:" ,i[8])
-            print("Medico:" ,i[9])
-        print("/////////////////////////////////////////////////////////////////////////")
-        input("--------------------Presione enter para regresar al menu------------------")
+            print(" ",i[0],"    ",i[1],"",i[2],"",i[3],"      ",i[4],"      ",i[5],"    ",i[6])
+        print("\n///////////////////////////////////////////////////////////////////////////////")
+        input("\n--------------------Presione enter para regresar al menu-----------------------")
         os.system("cls")
         con.close()
         registro_menu()
+
 
     def mostrar_Reg(self):
         os.system("cls")
