@@ -318,7 +318,7 @@ def registro_menu():
         r.eliminar()
     elif(op == 5):
         menu()
-
+#========================================STAFF MEDICO==================================================================#
 def staff_medico():
     os.system("cls")
     print("\t\t===========STAFF MEDICO===========")
