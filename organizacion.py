@@ -441,7 +441,113 @@ def staff_medico():
         print("\n1.-Dr. César Arturo Gonzáles Pérez\n2.-Dr. Alberto Bivian Salinas Portugal\n")
         input("\t--------Presione enter para regresar--------")
         staff_medico()
-
+    elif opc == 21:
+        print("\t\t====Medicina Intensiva====")
+        print("\n1.-Dr. Rafael Fredy Tapia Pérez\n2.-Dr. Miguel Barreda de la Cruz\n")
+        input("\t--------Presione enter para regresar--------")
+        staff_medico()
+    elif opc == 22:
+        print("\t\t====Medicina Intensiva Pediatrica====")
+        print("\n1.-Dr. Víctor Hugo Calderón Arenas\n")
+        input("\t--------Presione enter para regresar--------")
+        staff_medico()
+    elif opc == 23:
+        print("\t\t====Medicina Interna====")
+        print("\n1.-Dra. Luz Mercedes Mujica Calderón\n2.-Dra. Luz * Mujica Calderón\n3.-Dra. Lourdes Jesús Quiroa Muñoz\n4.-Dr. Raúl Lazarte Cárdenas\n5.-Dr. Pedro Emilio Alcazar Zuzunaga\n6.-Dr. Luis Linares Morante\n7.-Dr. Luis Francisco Fajardo Karlo\n8.-Dr. Luis * Linares Morante\n9.-Dr. Javier Torres Angles\n")
+        input("\t--------Presione enter para regresar--------")
+        staff_medico()
+    elif opc == 24:
+        print("\t\t====Medico Cirujano====")
+        print("\n1.-Dr. Jorge Perea Espinoza\n")
+        input("\t--------Presione enter para regresar--------")
+        staff_medico()
+    elif opc == 25:
+        print("\t\t====Nefrología====")
+        print("\n1.-Dr. Raúl Hernán Hinojosa Obando\n2.-Dr. Jorge Erman Sánchez Sánchez\n3.-Dr. César Augusto Trillo Rodríguez\n4.-Dr. Adán Edgar Bahamondes Palacios\n")
+        input("\t--------Presione enter para regresar--------")
+        staff_medico()
+    elif opc == 26:
+        print("\t\t====Neumología====")
+        print("\n1.-Dr. Miguel Fernando Farfán Delgado\n2.-Dr. Arturo Recabarren Lozada\n")
+        input("\t--------Presione enter para regresar--------")
+        staff_medico()
+    elif opc == 27:
+        print("\t\t====Neurocirugía====")
+        print("\n1.-Dra. Marleny Isabel Llerena Velarde\n2.-Dr. Víctor Gamero Ramírez\n3.-Dr. Luis Enrique Mendoza Huerta\n4.-Dr. Jorge Uldarico Cabrera Zuñiga\n5.-Dr. Jorge Santiago Pino Cisneros\n6.-Dr. Hernan José Valdivia Sosa\n7.-Dr. Gonzalo Erasmo Ramírez Gamarra\n8.-Dr. Francisco Javier Salinas Málaga\n9.-Dr. Danny Fuentes Reynoso\n10.-Dr. Crisogono Francisco Rubio Barrios\n11.-Dr. Carlos Suarez Málaga\n12.-Dr. Benjamin Eudocio Castillo de la Flor Delgado\n")
+        input("\t--------Presione enter para regresar--------")
+        staff_medico()
+    elif opc == 28:
+        print("\t\t====Neurología====")
+        print("\n1.-Dra. Yanet Astete Juarez\n2.-Dra. Jesús Yeliza Jovic Muñoz\n3.-Dra. Isabel Paola Camargo Salazar\n4.-Dra. Claudia Zea Villena\n5.-Dr. Julio Cesar Nisiama Vera\n6.-Dr. José Fernando Aguilar Flores\n7.-Dr. Hugo Yuen Oviedo	Neurología\n8.-Dr. Antero Peralta Mestas\n")
+        input("\t--------Presione enter para regresar--------")
+        staff_medico()
+    elif opc == 29:
+        print("\t\t====Nutricionista====")
+        print("\n1.-Lic. Yanett Ccorahua Meza\n2.-Lic. Jesús Martinez Rodriguez\n3.-Lic. Gloria Salas Nuñez\n")
+        input("\t--------Presione enter para regresar--------")
+        staff_medico()
+    elif opc == 30:
+        print("\t\t====Obstretricia====")
+        print("\n1.- Obs. Patricia Valdivia Carazas\n2.-Obs. Eliana Cáceres Cáceres\n3.-Obs. Eleana Romero Castillo\n4.-Obs. Boni Marianela Sánchez Cárdenas\n5.-Obs. Ana Cecilia Oviedo Carrazco\n")
+        input("\t--------Presione enter para regresar--------")
+        staff_medico()
+    elif opc == 31:
+        print("\t\t====Odontología====")
+        print("\n1.-Dr. Jaime Velarde Flores\n")
+        input("\t--------Presione enter para regresar--------")
+        staff_medico()
+    elif opc == 32:
+        print("\t\t====Oftalmología====")
+        print("\n1.-Dra. Milagros Torres Zavala\n2.-Dra. Lucia Fajardo Karlo\n3.-Dra. Giuliana Guillén Chavez\n4.-Dr. Víctor Sánchez Elguera\n5.-Dr. José Chavez Flores\n6.-Dr. Héctor Augusto Guillén Tamayo\n7.-Dr. Hugo Jimenez Herrera\n8.-Dr. Elard González Galeano\n9.-Dr. Antonio Herrera Pacheco\n")
+        input("\t--------Presione enter para regresar--------")
+        staff_medico()
+    elif opc == 33:
+        print("\t\t====Oncologia Medica====")
+        print("\n1.-Dr. Renzo Alvarez Barreda\n2.-Dr. Hernán David Morón Escobar\n3.-Dr. Jorge Aldo Becerra Giraldez\n4.-Dr. Ernesto Andrés Vargas Quezada\n")
+        input("\t--------Presione enter para regresar--------")
+        staff_medico()
+    elif opc == 34:
+        print("\t\t====Ortopedia y Traumatología====")
+        print("\n1.- Dr. Walter Juan Vargas Rodríguez\n2.-Dr. Víctor Clodoaldo Salas Corrales\n3.-Dr. Sergio Edwing Valdivia Rojas\n4.-Dr. Percy César Barrionuevo Silva\n5.-Dr. Percy Anibal Valdivia Lazo de la Vega\n6.-Dr. Percy Alberto Montesinos Valencia\n7.-Dr. Néctor Hugo Castelo García\n8.-Dr. Mauricio Rivera Bendezú\n9.-Dr. Manuel Jesús Luque Aguirre\n10.-Dr. Manuel Isaac Vera Salas\n11.-Dr. Luis Alberto Domingo Dongo Mardini\n12.-Dr. Lizardo Lozada Melgar\n13.-Dr. Julio César Vega Urrutia\n14.-Dr. Julio Aquino Apaza\n15.-Dr. Juan Manuel Pastor Sánchez\n16.-Dr. Juan Gualberto Cárdenas Moscoso\n17.-Dr. Juan Alberto Zeballos Medina\n18.-Dr. Jorge Cáceres Aucaylle\n19.-Dr. Hugo Jimmy Benavente Rojas\n20.-Dr. Edgardo Uldarico López Ortiz\n21.-Dr. Christiam Alfredo Gutierrez Corrales\n22.-Dr. Carlos Berckholtz Arispe\n23.-Dr. Carlos Alfonso Vargas Muñoz\n24.-Dr. Alfonso Guerra Pacheco\n")
+        input("\t--------Presione enter para regresar--------")
+        staff_medico()
+    elif opc == 35:
+        print("\t\t====Otorrinolaringología====")
+        print("\n1.-Dra. Gina Elisa Chávez Torres\n2.-Dr. Roberto Orlando Núñez Quiroz\n3.-Dr. Octavio Daniel Zevallos Urday\n4.-Dr. Jorge Martínez Marcos\n5.-Dr. Hernan Callata Casani\n6.-Dr. Félix Hernan Jesús Paredes Vásquezn7.-Dr. Francisco Alejandro Martínez Benavides\n")
+        input("\t--------Presione enter para regresar--------")
+        staff_medico()
+    elif opc == 36:
+        print("\t\t====Pediatría====")
+        print("\n1.-Dra. Olga Rocio Huaman Prado\n2.-Dra. Nuvia Leonor Valdivia Málaga\n3.-Dra. Nancy Elizabeth Zegarra Montoya\n4.-Dra. María Isabel Chavez Salinas\n5.-Dra. Martha Cecilia Chávez Vargas\n6.-Dra. Julia Delgado Palacios\n7.-Dra. Eliana María Peralta Martini\n8.-Dra. Ada Molina Portillo\n9.-Dr. Víctor Emigdio Chura Ortiz\n10.-Dr. Víctor Calderón Arenas\n11.-Dr. Pedro Raúl Zuñiga López\n12.-Dr. Pablo Polanco Aguilar\n13.-Dr. Nassip * Llerena Navarro\n14.-Dr. Miguel Pinto Villavicencio\n15.-Dr. Juan Nicolás Corrales Gallegos\n16.-Dr. Juan Andrés Begazo Bueno\n17.-Dr. José Luis Seijas Mogrovejo\n18.-Dr. Edwin Martín Lazo Rivera\n19.-Dr. Eddy Hernan Villafuerte Rivera\n20.-Dr. César Guillermo Alpaca Esquivel\n21.-Dr. Cesar Guillermo Alpaca Cano\n22.-Dr. Carlos Alberto Jara Gutierrez\n23.-Dr. Arturo Recabarren Lozada\n")
+        input("\t--------Presione enter para regresar--------")
+        staff_medico()
+    elif opc ==37:
+        print("\t\t====Psicología====")
+        print("\n1.-Dra. Mileny Pamea Gastulo Vera\n2.-Dra. Elsa Flora Rodríguez Valero\n3.-Dra. Eleana María Cervantes Quezada\n4.-Dra. Diana Carolina Paz Romainville\n5.-Dra. Desire Zeballos Buscaglia\n6.-Dr. Octavio Salinas Gutiérrez\n")
+        input("\t--------Presione enter para regresar--------")
+        staff_medico()
+    elif opc == 38:
+        print("\t\t====Psiquiatría====")
+        print("\n1.-Dra. Carla Elizabeth Málaga Pinto\n2.-Dr. Víctor Emilio Valdivia Murillo\n")
+        input("\t--------Presione enter para regresar--------")
+        staff_medico()
+    elif opc == 39:
+        print("\t\t====Radiología====")
+        print("\n1.-Dra. Ivonne Elizabeth Rodríguez Fernández\n2.-Dra. Alejandra Mercado Ojeda de Calla\n3.-Dr. Víctor Ernesto Gamero Medina\n4.-Dr. Marco Antonio Medina Gonzáles\n5.-Dr. Gustavo Ramiro Medina Rivera\n")
+        input("\t--------Presione enter para regresar--------")
+        staff_medico()
+    elif opc == 40:
+        print("\t\t====Reumatología====")
+        print("\n1.-Dra. Ruth Patricia Poblete Huertas\n2.-Dr. Simón Alfredo Gutiérrez Chávez\n3.-Dr. Luis Fernando Mateo Bellatín Vargas\n4.-Dr. Alejandro Miranda Pinto\n")
+        input("\t--------Presione enter para regresar--------")
+        staff_medico()
+    elif opc == 41:
+        print("\t\t====Urología====")
+        print("\n1.-Dr. Roger Hugo Gutiérrez Córdova\n2.-Dr. Luciano Benjamin Torrico Herrera\n3.-Dr. Julio Suárez Cueva\n4.-Dr. Juan Herón Frisancho Espinoza\n5.-Dr. Jaime Hernani Cuba\n6.-Dr. Fernando Rolando Diaz Gallegos	\n7.-Dr. Alejandro Gabriel Quiroa Mesias\n8.-Dr. Alejandro Escalante Álvaro\n")
+        input("\t--------Presione enter para regresar--------")
+        staff_medico()
+    elif opc == 42:
+        menu()
 def salir():
     b = 0
     while b == 0:
