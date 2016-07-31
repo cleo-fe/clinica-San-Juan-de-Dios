@@ -10,6 +10,7 @@ def menu():
     while(op == "0"):
         print("////////////////////////////////////////////////////////////////////////")
         print("\n========================CLINICA SAN JUAN DE DIOS========================\n")
+        print("/////////////////////////////////////////////////////////////////////////")
         print(" 1.- {}\n 2.- {}\n 3.- {}\n 4.- {}\n 5.- {}".format(opcion[0],opcion[1],opcion[2],opcion[3],opcion[4]))
         op = str(input("\nIngrese un opcion: "))
         if op not in ["1","2","3","4","5","6","7"]:
@@ -27,8 +28,12 @@ def menu():
         staff_medico()
     elif (op == "5"):
         salir()
+
+#=======================================INICIO=================================================================#
+
 def inicio():
     os.system("cls")
+    print("/////////////////////////////////////////////////////////////////////////\n")
     resu =open('inicio.txt','r')
     lineas=resu.readlines()
     for l in lineas:
@@ -445,11 +450,13 @@ def salir():
     b = 0
     while b == 0:
         os.system("cls")
-        opp = input("Esta seguro que desea salir: (Escriba Si/No ): ")
+        print("/////////////////////////////////////////////////////////////////////////")
+        opp = input("\n====================ESTA SEGURO QUE DESEA SALIR ?=======================\n \n\t\t\t (Escriba Si/No ):\n\t\t\t\t ")
         print()
         if opp.lower() == "si":
             b=1
-            print("El programa esta cerrandose ...")
+            print("===================EL PROGRAMA ESTA CERRANDOSE===========================\n")
+            print("/////////////////////////////////////////////////////////////////////////")
             time.sleep(2)
             sys.exit(1)
         elif opp.lower() == "no":
