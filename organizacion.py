@@ -180,7 +180,39 @@ def servicios():
     aux = int(op)-1
     cont = ser[aux]
     return cont
+#===================================REGISTRO======================================================================#
+def registro_menu():
+    os.system("cls")
+    op = 0
+    r = Registro()
+    list = ["Inscripcion","Mostrar Inscripcion","Modificar Inscripcion","Eliminar Inscripcion","Atras"]
+    while(op not in [1,2,3,4,5]):
+        print("////////////////////////////////////////////////////////////////////////////////")
+        print("=====================REGISTRO DE LA CLINICA SAN JUAN DE DIOS====================")
+        print("////////////////////////////////////////////////////////////////////////////////\n")
+        print("\n1.- {}\n\n2.- {}\n\n3.- {}\n\n4.- {}\n\n5.- {}\n".format(list[0],list[1],list[2],list[3],list[4]))
+        op = input("\n\tINGRESE OPCION: ")
+        try:
+            op = int(op)
+            if op not in [1,2,3,4,5]:
+                print("Opcion incorrecta, Vuelva a intentarlo")
+                time.sleep(2)
+                os.system("cls")
+        except ValueError:
+            print("Ingrese solo digitos")
+            time.sleep(5)
+            op = 0
 
+    if(op == 1):
+        r.inscripcion()
+    elif(op == 2):
+        r.mostrar()
+    elif(op == 3):
+        r.mostrar_Reg()
+    elif(op == 4):
+        r.eliminar()
+    elif(op == 5):
+        menu()
 class Registro:
     def __init__(self):
         self.Servicio = ""
@@ -287,37 +319,6 @@ class Registro:
         con.close()
         registro_menu()
 
-def registro_menu():
-    os.system("cls")
-    op = 0
-    r = Registro()
-    list = ["Inscripcion","Mostrar Inscripcion","Modificar Inscripcion","Eliminar Inscripcion","Atras"]
-    while(op not in [1,2,3,4,5]):
-        print("\n\t=======REGISTRO DE LA CLINICA SAN JUAN DE DIOS==========")
-        print("")
-        print(" 1.- {}\n 2.- {}\n 3.- {}\n 4.- {}\n 5.- {}\n".format(list[0],list[1],list[2],list[3],list[4]))
-        op = input("Ingrese una opcion: ")
-        try:
-            op = int(op)
-            if op not in [1,2,3,4,5]:
-                print("Opcion incorrecta, Vuelva a intentarlo")
-                time.sleep(2)
-                os.system("cls")
-        except ValueError:
-            print("Ingrese solo digitos")
-            time.sleep(5)
-            op = 0
-
-    if(op == 1):
-        r.inscripcion()
-    elif(op == 2):
-        r.mostrar()
-    elif(op == 3):
-        r.mostrar_Reg()
-    elif(op == 4):
-        r.eliminar()
-    elif(op == 5):
-        menu()
 #========================================STAFF MEDICO==================================================================#
 def staff_medico():
     os.system("cls")
