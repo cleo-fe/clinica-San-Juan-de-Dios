@@ -168,16 +168,16 @@ def registro_menu():
     os.system("cls")
     op = 0
     r = Registro()
-    list = ["Inscripcion","Mostrar Inscripcion","Modificar Inscripcion","Eliminar Inscripcion","Atras"]
-    while(op not in [1,2,3,4,5]):
+    list = ["Inscripcion","Mostrar Inscripcion","Mostrar Inscripcion po N° D.N.I.","Modificar Inscripcion","Eliminar Inscripcion","Atras"]
+    while(op not in [1,2,3,4,5.6]):
         print("////////////////////////////////////////////////////////////////////////////////")
         print("=====================REGISTRO DE LA CLINICA SAN JUAN DE DIOS====================")
         print("////////////////////////////////////////////////////////////////////////////////\n")
-        print("\n1.- {}\n\n2.- {}\n\n3.- {}\n\n4.- {}\n\n5.- {}\n".format(list[0],list[1],list[2],list[3],list[4]))
+        print("\n1.- {}\n\n2.- {}\n\n3.- {}\n\n4.- {}\n\n5.- {}\n\n6.- {}\n".format(list[0],list[1],list[2],list[3],list[4],list[5]))
         op = input("\n\tINGRESE OPCION: ")
         try:
             op = int(op)
-            if op not in [1,2,3,4,5]:
+            if op not in [1,2,3,4,5,6]:
                 print("Opcion incorrecta, Vuelva a intentarlo")
                 time.sleep(2)
                 os.system("cls")
@@ -191,10 +191,12 @@ def registro_menu():
     elif(op == 2):
         r.mostrar()
     elif(op == 3):
-        r.mostrar_Reg()
+        r.mostrarpordni()
     elif(op == 4):
-        r.eliminar()
+        r.mostrar_Reg()
     elif(op == 5):
+        r.eliminar()
+    elif(op == 6):
         menu()
 class Registro:
     def __init__(self):
@@ -241,6 +243,25 @@ class Registro:
         print("\nNUMERO=============NOMBRES================DNI=========EDAD=========SERVICIO== \n")
         for i in cursor:
             print(" ",i[0],"    ",i[1],"",i[2],"",i[3],"      ",i[4],"      ",i[5],"    ",i[6])
+        print("\n///////////////////////////////////////////////////////////////////////////////")
+        input("\n--------------------Presione enter para regresar al menu-----------------------")
+        os.system("cls")
+        con.close()
+        registro_menu()
+
+    def mostrarpordni(self):
+        dni= input("\nINDIQUE SU NUMERO DE D.N.I.: ")
+        con=sqlite3.connect("pacientes.s3db")
+        cursor = con.cursor()
+        cursor.execute("SELECT * from Registros WHERE DNI = '"+dni+"'")
+        print("\nNUMERO=============NOMBRES================DNI=========EDAD=========SERVICIO== \n")
+        for i in cursor:
+            print(" ",i[0],"    ",i[1],"",i[2],"",i[3],"      ",i[4],"      ",i[5],"    ",i[6])
+            print("\n///////////////////////////////////////////////////////////////////////////////")
+            input("\n--------------------Presione enter para regresar al menu-----------------------")
+            os.system("cls")
+            con.close()
+            registro_menu()
         print("\n///////////////////////////////////////////////////////////////////////////////")
         input("\n--------------------Presione enter para regresar al menu-----------------------")
         os.system("cls")
