@@ -14,7 +14,7 @@ def menu():
         print(" 1.- {}\n 2.- {}\n 3.- {}\n 4.- {}\n 5.- {}".format(opcion[0],opcion[1],opcion[2],opcion[3],opcion[4]))
         op = str(input("\nIngrese un opcion: "))
         if op not in ["1","2","3","4","5","6","7"]:
-            print("Opcion incorrecta, Vuelva a intentarlo!")
+            print("Opcion incorrecta, Vuelva a intentarlo...")
             time.sleep(2)
             op = "0"
         os.system("cls")
@@ -85,7 +85,14 @@ class Servicios:
         print("/////////////////////////////////////////////////////////////////////////")
         print("=======================NUEVO SERVICIO A AGREGAR==========================")
         print("/////////////////////////////////////////////////////////////////////////")
-        servicionuevo=input("\m\tIngrese nuevo servicio:   \n")
+        while True:
+            try:
+                servicionuevo =input("\n\tIngrese nuevo servicio:   \n:")
+                while servicionuevo.isalpha()==False:
+                    servicionuevo = int(servicionuevo)
+                break
+            except ValueError:
+                print("\nEl servicio debe de contener solo letras ...")
         con = sqlite3.connect("Clinica-San-Juan-de-Dios.s3db")
         cursor = con.cursor()
         cursor.execute("insert into Registro (Servicios) values ('"+servicionuevo+"')")
@@ -128,9 +135,21 @@ class Servicios:
         for i in cursor:
             print("  \t\t",i[0],"\t\t\t",i[1])
         print("")
-        codigo=input("\n\tSeleccione numero a modificar:  ")
+        while True:
+            try:
+                codigo =input("\n\tSeleccione numero a modificar:   \n:")
+                break
+            except ValueError:
+                print("\n El servicio debe de ser valido...")
         print("\n\tIngrese los datos a modificar\n")
-        servicionuevo=input("\tIngrese nuevo servicio:   ")
+        while True:
+            try:
+                servicionuevo =input("\n\tIngrese nuevo servicio:   \n:")
+                while servicionuevo.isalpha()==False:
+                    servicionuevo = int(servicionuevo)
+                break
+            except ValueError:
+                print("\nEl servicio debe de contener solo letras ...")
         cursor.execute("update Registro set Servicios ='"+servicionuevo+"' where ID = '"+codigo+"'")
         con.commit()
         print("\n//////////////////////////////////////////////////////////////////////////")
@@ -153,7 +172,12 @@ class Servicios:
         for i in cursor:
             print("  \t\t",i[0],"\t\t\t",i[1])
         print("\n===========================================================================\n")
-        codigo=input("\tELIJA EL SERVICIO QUE DESEA ELIMINAR:  ")
+        while True:
+            try:
+                codigo =input("\n\tSeleccione numero a eliminar:   \n:")
+                break
+            except ValueError:
+                print("\n El servicio debe de ser valido...")
         cursor.execute("delete from Registro where ID = '"+codigo+"'")
         con.commit()
         print("\n//////////////////////////////////////////////////////////////////////////")
@@ -236,7 +260,7 @@ class Registro:
                     nombre = int(nombre)
                 break
             except ValueError:
-                print("\nSu apellido debe de contener solo letras ...")
+                print("\nSu nombre debe de contener solo letras ...")
         while True:
             try:
                 dni =input("\D.N.I: ")
@@ -360,7 +384,7 @@ class Registro:
                     nombre = int(nombre)
                 break
             except ValueError:
-                print("\nSu apellido debe de contener solo letras ...")
+                print("\nSu nombre debe de contener solo letras ...")
         while True:
             try:
                 dni =input("\D.N.I: ")
