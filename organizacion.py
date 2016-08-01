@@ -85,14 +85,7 @@ class Servicios:
         print("/////////////////////////////////////////////////////////////////////////")
         print("=======================NUEVO SERVICIO A AGREGAR==========================")
         print("/////////////////////////////////////////////////////////////////////////")
-        while True:
-            try:
-                servicionuevo =input("\n\tIngrese nuevo servicio:   \n:")
-                while servicionuevo.isalpha()==False:
-                    servicionuevo = int(servicionuevo)
-                break
-            except ValueError:
-                print("\nEl servicio debe de contener solo letras ...")
+        servicionuevo=input("\m\tIngrese nuevo servicio:   \n")
         con = sqlite3.connect("Clinica-San-Juan-de-Dios.s3db")
         cursor = con.cursor()
         cursor.execute("insert into Registro (Servicios) values ('"+servicionuevo+"')")
@@ -135,21 +128,9 @@ class Servicios:
         for i in cursor:
             print("  \t\t",i[0],"\t\t\t",i[1])
         print("")
-        while True:
-            try:
-                codigo =input("\n\tSeleccione numero a modificar:   \n:")
-                break
-            except ValueError:
-                print("\n El servicio debe de ser valido...")
+        codigo=input("\n\tSeleccione numero a modificar:  ")
         print("\n\tIngrese los datos a modificar\n")
-        while True:
-            try:
-                servicionuevo =input("\n\tIngrese nuevo servicio:   \n:")
-                while servicionuevo.isalpha()==False:
-                    servicionuevo = int(servicionuevo)
-                break
-            except ValueError:
-                print("\nEl servicio debe de contener solo letras ...")
+        servicionuevo=input("\m\tIngrese nuevo servicio:   \n")
         cursor.execute("update Registro set Servicios ='"+servicionuevo+"' where ID = '"+codigo+"'")
         con.commit()
         print("\n//////////////////////////////////////////////////////////////////////////")
@@ -172,12 +153,7 @@ class Servicios:
         for i in cursor:
             print("  \t\t",i[0],"\t\t\t",i[1])
         print("\n===========================================================================\n")
-        while True:
-            try:
-                codigo =input("\n\tSeleccione numero a eliminar:   \n:")
-                break
-            except ValueError:
-                print("\n El servicio debe de ser valido...")
+        codigo=input("\tELIJA EL SERVICIO QUE DESEA ELIMINAR:  ")
         cursor.execute("delete from Registro where ID = '"+codigo+"'")
         con.commit()
         print("\n//////////////////////////////////////////////////////////////////////////")
@@ -193,7 +169,7 @@ def registro_menu():
     op = 0
     r = Registro()
     list = ["Inscripcion","Mostrar Inscripcion","Mostrar Inscripcion po N° D.N.I.","Modificar Inscripcion","Eliminar Inscripcion","Atras"]
-    while(op not in [1,2,3,4,5.6]):
+    while(op not in [1,2,3,4,5,6]):
         print("////////////////////////////////////////////////////////////////////////////////")
         print("=====================REGISTRO DE LA CLINICA SAN JUAN DE DIOS====================")
         print("////////////////////////////////////////////////////////////////////////////////\n")
@@ -237,50 +213,11 @@ class Registro:
         print("\t=================INSCRIPCION=====================")
         print("////////////////////////////////////////////////////////////////////////////////\n")
         print("\n\tINGRESE LOS SIGUIENTES DATOS ")
-        while True:
-            try:
-                apellidopaterno =input("\nApellido Paterno:")
-                while apellidopaterno.isalpha()==False:
-                    apellidopaterno = int(apellidopaterno)
-                break
-            except ValueError:
-                print("\nSu apellido debe de contener solo letras ...")
-        while True:
-            try:
-                apellidomaterno =input("\nApellido Materno:")
-                while apellidomaterno.isalpha()==False:
-                    apellidomaterno = int(apellidomaterno)
-                break
-            except ValueError:
-                print("\nSu apellido debe de contener solo letras ...")
-        while True:
-            try:
-                nombre =input("\nNombre:")
-                while nombre.isalpha()==False:
-                    nombre = int(nombre)
-                break
-            except ValueError:
-                print("\nSu nombre debe de contener solo letras ...")
-        while True:
-            try:
-                dni =input("\D.N.I: ")
-                dni = str(dni)
-                while len(dni) != 8:
-                    dni =input("\nD.N.I (8 digitos): ")
-                    dni = str(dni)
-                break
-            except ValueError:
-                print("\nEl numero de su D.N.I (8 digitos) ")
-        while True:
-            try:
-                edad =input("\nEdad: ")
-                edad = int(edad)
-                while 0 > edad or edad > 120:
-                    edad =input("\nEdad: ")
-                    edad = int(edad)
-                break
-            except ValueError:
-                print("\nSu edad debe de contener solo numeros ... ")
+        apellidopaterno = str(input( "\nApellido Paterno: " ))
+        apellidomaterno = str(input( "\nApellido Materno: " ))
+        nombre = str(input("\nNombre: "))
+        dni= input("\nD.N.I.: ")
+        edad = str(input("\nEdad: "))
         print("Servicio:{0}".format(servicio))
         os.system("cls")
         con = sqlite3.connect("pacientes.s3db")
@@ -313,16 +250,7 @@ class Registro:
         registro_menu()
 
     def mostrarpordni(self):
-        while True:
-            try:
-                dni =input("\Indique el numero de su D.N.I: ")
-                dni = str(dni)
-                while len(dni) != 8:
-                    dni =input("\nIngrese el numero de su D.N.I (8 digitos): ")
-                    dni = str(dni)
-                break
-            except ValueError:
-                print("\nEl numero de su D.N.I (8 digitos) ")
+        dni= input("\nINDIQUE SU NUMERO DE D.N.I.: ")
         con=sqlite3.connect("pacientes.s3db")
         cursor = con.cursor()
         cursor.execute("SELECT * from Registros WHERE DNI = '"+dni+"'")
@@ -352,59 +280,14 @@ class Registro:
         for i in cursor:
             print(" ",i[0],"    ",i[1],"",i[2],"",i[3],"      ",i[4],"      ",i[5],"    ",i[6])
         print("\n////////////////////////////////////////////////////////////////////////////////")
-        while True:
-            try:
-                codigo =input("\n\n\t\tINDIQUE EL REGISTRO QUE DESEA MODIFICAR: ")
-                codigo = int(codigo)
-                break
-            except ValueError:
-                print("\nIngrese un registro valido ")
+        codigo =int(input("\n\n\t\tINDIQUE EL REGISTRO QUE DESEA MODIFICAR: "))
         print("\nIngrese los datos a modificar")
         print("\nIngrese Datos: ")
-        while True:
-            try:
-                apellidopaterno =input("\nApellido Paterno:")
-                while apellidopaterno.isalpha()==False:
-                    apellidopaterno = int(apellidopaterno)
-                break
-            except ValueError:
-                print("\nSu apellido debe de contener solo letras ...")
-        while True:
-            try:
-                apellidomaterno =input("\nApellido Materno:")
-                while apellidomaterno.isalpha()==False:
-                    apellidomaterno = int(apellidomaterno)
-                break
-            except ValueError:
-                print("\nSu apellido debe de contener solo letras ...")
-        while True:
-            try:
-                nombre =input("\nNombre:")
-                while nombre.isalpha()==False:
-                    nombre = int(nombre)
-                break
-            except ValueError:
-                print("\nSu nombre debe de contener solo letras ...")
-        while True:
-            try:
-                dni =input("\D.N.I: ")
-                dni = str(dni)
-                while len(dni) != 8:
-                    dni =input("\nD.N.I (8 digitos): ")
-                    dni = str(dni)
-                break
-            except ValueError:
-                print("\nEl numero de su D.N.I (8 digitos) ")
-        while True:
-            try:
-                edad =input("\nEdad: ")
-                edad = int(edad)
-                while 0 > edad or edad > 120:
-                    edad =input("\nEdad: ")
-                    edad = int(edad)
-                break
-            except ValueError:
-                print("\nSu edad debe de contener solo numeros ... ")
+        apellidopaterno = str(input( "\nApellido Paterno: " ))
+        apellidomaterno = str(input( "\nApellido Materno: " ))
+        nombre = str(input("\nNombre: "))
+        dni= input("\nD.N.I.: ")
+        edad = str(input("\nEdad: "))
         servicio = servicios()
         print("Servicio:{0}".format(servicio))
         cursor.execute("update Registros set ApellidoPaterno ='"+apellidopaterno+"',ApellidoMaterno ='"+apellidomaterno+"',Nombre ='"+nombre+"',Dni ='"+dni+"', Edad ='"+edad+"'Servicio ='"+servicio+"' where ID = '"+codigo+"'")
@@ -428,14 +311,8 @@ class Registro:
         print("\nNUMERO=============NOMBRES================DNI=========EDAD=========SERVICIO== \n")
         for i in cursor:
             print(" ",i[0],"    ",i[1],"",i[2],"",i[3],"      ",i[4],"      ",i[5],"    ",i[6])
-        print("\n////////////////////////////////////////////////////////////////////////////////")
-        while True:
-            try:
-                codigo =input("\n\n\t\tINDIQUE EL REGISTRO QUE DESEA ELIMINAR: ")
-                codigo = int(codigo)
-                break
-            except ValueError:
-                print("\nIngrese un registro valido ")
+        print("\n///////////////////////////////////////////////////////////////////////////////")
+        codigo=input("\n\tINDIQUE QUE REGISTRO DESEA ELIMINAR :  ")
         cursor.execute("delete from Registros where ID = '"+codigo+"'")
         con.commit()
         print("\n///////////////////////////////////////////////////////////////////////////////")
