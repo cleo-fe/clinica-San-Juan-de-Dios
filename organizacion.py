@@ -163,23 +163,6 @@ class Servicios:
         os.system("cls")
         con.close()
         registro_menu()
-
-def servicios():
-    op = "0"
-    ser = ["Hospitalizacion","Maternidad","Farmacia","Laboratorio","Ambulancia","Chequeos Preventivos","Consultorio Externo","Nutricion - cafeteria","Unidad de Cuidados Intensivos","Emergencias","Centro Quirúrgico","Oftalmología","Odontología","Rehabilitación","Video endoscopias","Tomografías","Gabinete Cardiólogo","Gabinete Neurológico ","Esterilización ","Aula Virtual Hospitalaria ","","","","","","","","","","","","","","","","","","",""]
-    while(op == "0"):
-        print("\n\t\t======SERVICIOS DE LA CLINICA SAN JUAN DE DIOS======")
-        print("")
-        print(" 1.- {}\n 2.- {}\n 3.- {}\n 4.- {}\n 5.- {}\n 6.- {}\n 7.- {}\n 8.- {}\n 9.- {}\n 10.- {}\n 11.- {}\n 12.- {}\n 13.- {}\n 14.- {}\n 15.- {}\n 16.- {}\n 17.- {}\n 18.- {}\n 19.- {}\n 20.- {}".format(ser[0],ser[1],ser[2],ser[3],ser[4],ser[5],ser[6],ser[7],ser[8],ser[9],ser[10],ser[11],ser[12],ser[13],ser[14],ser[15],ser[16],ser[17],ser[18],ser[19]))
-        op = str(input("\nIngrese un opcion: "))
-        if op not in ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"]:
-            print("Opcion incorrecta, Vuelva a intentarlo")
-            time.sleep(2)
-            op = "0"
-        os.system("cls")
-    aux = int(op)-1
-    cont = ser[aux]
-    return cont
 #===================================REGISTRO======================================================================#
 def registro_menu():
     os.system("cls")
@@ -318,7 +301,6 @@ class Registro:
         os.system("cls")
         con.close()
         registro_menu()
-
 #========================================STAFF MEDICO==================================================================#
 def staff_medico():
     os.system("cls")
@@ -549,6 +531,24 @@ def staff_medico():
         staff_medico()
     elif opc == 42:
         menu()
+def servicios():
+    op = "0"
+    ser = ["Hospitalizacion","Maternidad","Farmacia","Laboratorio","Ambulancia","Chequeos Preventivos","Consultorio Externo","Nutricion - cafeteria","Unidad de Cuidados Intensivos","Emergencias","Centro Quirúrgico","Oftalmología","Odontología","Rehabilitación","Video endoscopias","Tomografías","Gabinete Cardiólogo","Gabinete Neurológico ","Esterilización ","Aula Virtual Hospitalaria ","","","","","","","","","","","","","","","","","","",""]
+    while(op == "0"):
+        print("////////////////////////////////////////////////////////////////////////////////")
+        print("===========================SERVICIOS A REGISTRARSE==============================")
+        print("")
+        print(" 1.- {}\n 2.- {}\n 3.- {}\n 4.- {}\n 5.- {}\n 6.- {}\n 7.- {}\n 8.- {}\n 9.- {}\n 10.- {}\n 11.- {}\n 12.- {}\n 13.- {}\n 14.- {}\n 15.- {}\n 16.- {}\n 17.- {}\n 18.- {}\n 19.- {}\n 20.- {}".format(ser[0],ser[1],ser[2],ser[3],ser[4],ser[5],ser[6],ser[7],ser[8],ser[9],ser[10],ser[11],ser[12],ser[13],ser[14],ser[15],ser[16],ser[17],ser[18],ser[19]))
+        op = str(input("\nIngrese un opcion: "))
+        if op not in ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"]:
+            print("Opcion incorrecta, Vuelva a intentarlo")
+            time.sleep(2)
+            op = "0"
+        os.system("cls")
+    aux = int(op)-1
+    cont = ser[aux]
+    return cont
+
 def salir():
     b = 0
     while b == 0:
