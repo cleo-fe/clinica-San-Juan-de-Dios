@@ -11,7 +11,7 @@ def menu():
         print("////////////////////////////////////////////////////////////////////////")
         print("\n========================CLINICA SAN JUAN DE DIOS========================\n")
         print("/////////////////////////////////////////////////////////////////////////")
-        print(" 1.- {}\n 2.- {}\n 3.- {}\n 4.- {}\n 5.- {}".format(opcion[0],opcion[1],opcion[2],opcion[3],opcion[4]))
+        print(" \n 1.- {}\n\n 2.- {}\n\n 3.- {}\n\n 4.- {}\n\n 5.- {}".format(opcion[0],opcion[1],opcion[2],opcion[3],opcion[4]))
         op = str(input("\nIngrese un opcion: "))
         if op not in ["1","2","3","4","5","6","7"]:
             print("Opcion incorrecta, Vuelva a intentarlo...")
@@ -21,7 +21,7 @@ def menu():
     if (op == "1"):
         inicio()
     elif (op == "2"):
-        servicios()
+        servicios_menu()
     elif (op == "3"):
         registro_menu()
     elif (op == "4"):
@@ -688,7 +688,6 @@ def servicios():
             print("Opcion incorrecta, Vuelva a intentarlo")
             time.sleep(2)
             op = "0"
-        os.system("cls")
     aux = int(op)-1
     cont = ser[aux]
     return cont
