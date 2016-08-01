@@ -213,11 +213,50 @@ class Registro:
         print("\t=================INSCRIPCION=====================")
         print("////////////////////////////////////////////////////////////////////////////////\n")
         print("\n\tINGRESE LOS SIGUIENTES DATOS ")
-        apellidopaterno = str(input( "\nApellido Paterno: " ))
-        apellidomaterno = str(input( "\nApellido Materno: " ))
-        nombre = str(input("\nNombre: "))
-        dni = str(input("\nD.N.I: "))
-        edad = str(input("\nEdad: "))
+        while True:
+            try:
+                apellidopaterno =input("\nApellido Paterno:")
+                while apellidopaterno.isalpha()==False:
+                    apellidopaterno = int(apellidopaterno)
+                break
+            except ValueError:
+                print("\nSu apellido debe de contener solo letras ...")
+        while True:
+            try:
+                apellidomaterno =input("\nApellido Materno:")
+                while apellidomaterno.isalpha()==False:
+                    apellidomaterno = int(apellidomaterno)
+                break
+            except ValueError:
+                print("\nSu apellido debe de contener solo letras ...")
+        while True:
+            try:
+                nombre =input("\nNombre:")
+                while nombre.isalpha()==False:
+                    nombre = int(nombre)
+                break
+            except ValueError:
+                print("\nSu apellido debe de contener solo letras ...")
+        while True:
+            try:
+                dni =input("\D.N.I: ")
+                dni = str(dni)
+                while len(dni) != 8:
+                    dni =input("\nD.N.I (8 digitos): ")
+                    dni = str(dni)
+                break
+            except ValueError:
+                print("\nEl numero de su D.N.I (8 digitos) ")
+        while True:
+            try:
+                edad =input("\nEdad: ")
+                edad = int(edad)
+                while 0 > edad or edad > 120:
+                    edad =input("\nEdad: ")
+                    edad = int(edad)
+                break
+            except ValueError:
+                print("\nSu edad debe de contener solo numeros ... ")
         print("Servicio:{0}".format(servicio))
         os.system("cls")
         con = sqlite3.connect("pacientes.s3db")
@@ -250,7 +289,16 @@ class Registro:
         registro_menu()
 
     def mostrarpordni(self):
-        dni= input("\nINDIQUE SU NUMERO DE D.N.I.: ")
+        while True:
+            try:
+                dni =input("\Indique el numero de su D.N.I: ")
+                dni = str(dni)
+                while len(dni) != 8:
+                    dni =input("\nIngrese el numero de su D.N.I (8 digitos): ")
+                    dni = str(dni)
+                break
+            except ValueError:
+                print("\nEl numero de su D.N.I (8 digitos) ")
         con=sqlite3.connect("pacientes.s3db")
         cursor = con.cursor()
         cursor.execute("SELECT * from Registros WHERE DNI = '"+dni+"'")
@@ -280,14 +328,59 @@ class Registro:
         for i in cursor:
             print(" ",i[0],"    ",i[1],"",i[2],"",i[3],"      ",i[4],"      ",i[5],"    ",i[6])
         print("\n////////////////////////////////////////////////////////////////////////////////")
-        codigo=input("\n\t\tINDIQUE EL REGISTRO QUE DESEA MODIFICAR")
+        while True:
+            try:
+                codigo =input("\n\n\t\tINDIQUE EL REGISTRO QUE DESEA MODIFICAR: ")
+                codigo = int(codigo)
+                break
+            except ValueError:
+                print("\nIngrese un registro valido ")
         print("\nIngrese los datos a modificar")
         print("\nIngrese Datos: ")
-        apellidopaterno = str(input( "\nApellido Paterno: " ))
-        apellidomaterno = str(input( "\nApellido Materno: " ))
-        nombre = str(input("\nNombre: "))
-        dni = str(input("\nNumero de D.N.I: "))
-        edad = int(input("\nEdad: "))
+        while True:
+            try:
+                apellidopaterno =input("\nApellido Paterno:")
+                while apellidopaterno.isalpha()==False:
+                    apellidopaterno = int(apellidopaterno)
+                break
+            except ValueError:
+                print("\nSu apellido debe de contener solo letras ...")
+        while True:
+            try:
+                apellidomaterno =input("\nApellido Materno:")
+                while apellidomaterno.isalpha()==False:
+                    apellidomaterno = int(apellidomaterno)
+                break
+            except ValueError:
+                print("\nSu apellido debe de contener solo letras ...")
+        while True:
+            try:
+                nombre =input("\nNombre:")
+                while nombre.isalpha()==False:
+                    nombre = int(nombre)
+                break
+            except ValueError:
+                print("\nSu apellido debe de contener solo letras ...")
+        while True:
+            try:
+                dni =input("\D.N.I: ")
+                dni = str(dni)
+                while len(dni) != 8:
+                    dni =input("\nD.N.I (8 digitos): ")
+                    dni = str(dni)
+                break
+            except ValueError:
+                print("\nEl numero de su D.N.I (8 digitos) ")
+        while True:
+            try:
+                edad =input("\nEdad: ")
+                edad = int(edad)
+                while 0 > edad or edad > 120:
+                    edad =input("\nEdad: ")
+                    edad = int(edad)
+                break
+            except ValueError:
+                print("\nSu edad debe de contener solo numeros ... ")
         servicio = servicios()
         print("Servicio:{0}".format(servicio))
         cursor.execute("update Registros set ApellidoPaterno ='"+apellidopaterno+"',ApellidoMaterno ='"+apellidomaterno+"',Nombre ='"+nombre+"',Dni ='"+dni+"', Edad ='"+edad+"'Servicio ='"+servicio+"' where ID = '"+codigo+"'")
@@ -312,7 +405,13 @@ class Registro:
         for i in cursor:
             print(" ",i[0],"    ",i[1],"",i[2],"",i[3],"      ",i[4],"      ",i[5],"    ",i[6])
         print("\n////////////////////////////////////////////////////////////////////////////////")
-        codigo=input("\n\tINDIQUE QUE REGISTRO DESEA ELIMINAR :  ")
+        while True:
+            try:
+                codigo =input("\n\n\t\tINDIQUE EL REGISTRO QUE DESEA ELIMINAR: ")
+                codigo = int(codigo)
+                break
+            except ValueError:
+                print("\nIngrese un registro valido ")
         cursor.execute("delete from Registros where ID = '"+codigo+"'")
         con.commit()
         print("\n///////////////////////////////////////////////////////////////////////////////")
