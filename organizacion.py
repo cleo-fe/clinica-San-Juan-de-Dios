@@ -168,7 +168,7 @@ def registro_menu():
     os.system("cls")
     op = 0
     r = Registro()
-    list = ["INSCRIPCCION","MOSTRAR RESGISTRO","BUSCAR INSCRIPCCION POR N° D.N.I.","MODIFICAR INSCRIPCION","ELIMINAR INSCRIPCION","ATRAS"]
+    list = ["INSCRIPCCION","MOSTRAR REGISTRO","BUSCAR INSCRIPCCION POR N° D.N.I.","MODIFICAR INSCRIPCION","ELIMINAR INSCRIPCION","ATRAS"]
     while(op not in [1,2,3,4,5,6]):
         print("////////////////////////////////////////////////////////////////////////////////")
         print("=====================REGISTRO DE LA CLINICA SAN JUAN DE DIOS====================")
@@ -281,7 +281,7 @@ class Registro:
                 print("\t\n==========OPCION INCORRECTA VUELVA A INTENTARLO==========!")
                 time.sleep(2)
                 op = "0"
-            os.system("cls")
+
         if (op == "1"):
             print("\n-------INGRESE DATOS A CONTINUACION------ ")
             apellidopaterno = input( "\n Apellido Paterno:   " )
@@ -413,99 +413,16 @@ class Registro:
             print("\tSERVICIO:                ",i[6])
         print("\n////////////////////////////////////////////////////////////////////////////////")
         codigo=input("\n\tINDIQUE QUE REGISTRO DESEA ELIMINAR :  ")
-        print("\nINGRESE LOS DATOS A MODIFICAR")
-        op = "0"
-        opcion= ["TODOS LOS CAMPOS","AELLIDO PATERNO","APELLIDO MATERNO","NOMBRE","DNI","EDAD","SERVICIO","SALIR"]
-        while(op == "0"):
-            print("\n  1.- {}\n\n  2.- {}\n\n  3.- {} \n\n 4.- {}\n\n  5.- {}\n\n  6.- {}\n\n  7.- {}\n\n  8.- {}".format(opcion[0],opcion[1],opcion[2],opcion[3],opcion[4],opcion[5],opcion[6],opcion[7]))
-            op = str(input("\n\tINGRESE UNA OPCION:     "))
-            if op not in ["1","2","3","4","5","6","7","8"]:
-                print("\t\n==========OPCION INCORRECTA VUELVA A INTENTARLO==========!")
-                time.sleep(2)
-                op = "0"
-                os.system("cls")
-        if (op == "1"):
-            cursor.execute("delete from Registros where ID = '"+codigo+"'")
-            con.commit()
-            print("\n///////////////////////////////////////////////////////////////////////////////")
-            print("=====================REGISTRO ELIMINADO EXITOSAMENTE==========================")
-            print("///////////////////////////////////////////////////////////////////////////////")
-            input("\n---------------------Presione enter para regresar al menu----------------------")
-            os.system("cls")
-            con.close()
-            registro_menu()
-        elif (op == "2"):
-            cursor.execute("delete from Registros where ID= '"+codigo+"'")
-            con.commit()
-            print("\n///////////////////////////////////////////////////////////////////////////////")
-            print("=====================REGISTRO ELIMINADO EXITOSAMENTE==========================")
-            print("///////////////////////////////////////////////////////////////////////////////")
-            input("\n---------------------Presione enter para regresar al menu----------------------")
-            os.system("cls")
-            con.close()
-            registro_menu()
-        elif (op == "3"):
-            print("\nIngrese Datos: ")
-            apellidomaterno = input( "\nApellido Materno: " )
-            cursor.execute("delete from Registros set ApellidoMaterno ='"+apellidomaterno+"' where ID = '"+codigo+"'")
-            con.commit()
-            print("\n///////////////////////////////////////////////////////////////////////////////")
-            print("=====================REGISTRO MODIFICADO EXITOSAMENTE==========================")
-            print("///////////////////////////////////////////////////////////////////////////////")
-            input("\n---------------------Presione enter para regresar al menu----------------------")
-            os.system("cls")
-            con.close()
-            registro_menu()
-        if (op == "4"):
-            print("\nIngrese Datos: ")
-            nombre = input("\nNombre: ")
-            cursor.execute("delete from Registros set Nombre ='"+nombre+"' where ID = '"+codigo+"'")
-            con.commit()
-            print("\n///////////////////////////////////////////////////////////////////////////////")
-            print("=====================REGISTRO MODIFICADO EXITOSAMENTE==========================")
-            print("///////////////////////////////////////////////////////////////////////////////")
-            input("\n---------------------Presione enter para regresar al menu----------------------")
-            os.system("cls")
-            con.close()
-            registro_menu()
-        elif (op == "5"):
-            print("\nIngrese Datos: ")
-            dni = input("\nNumero de D.N.I: ")
-            cursor.execute("delete from Registros Dni ='"+dni+"' where ID = '"+codigo+"'")
-            con.commit()
-            print("\n///////////////////////////////////////////////////////////////////////////////")
-            print("=====================REGISTRO MODIFICADO EXITOSAMENTE==========================")
-            print("///////////////////////////////////////////////////////////////////////////////")
-            input("\n---------------------Presione enter para regresar al menu----------------------")
-            os.system("cls")
-            con.close()
-            registro_menu()
-        elif (op == "6"):
-            print("\nIngrese Datos: ")
-            edad = input("\nEdad: ")
-            cursor.execute("delete from Registros set Edad ='"+edad+"' where ID = '"+codigo+"'")
-            con.commit()
-            print("\n///////////////////////////////////////////////////////////////////////////////")
-            print("=====================REGISTRO MODIFICADO EXITOSAMENTE==========================")
-            print("///////////////////////////////////////////////////////////////////////////////")
-            input("\n---------------------Presione enter para regresar al menu----------------------")
-            os.system("cls")
-            con.close()
-            registro_menu()
-        elif (op == "7"):
-            print("\nIngrese Datos: ")
-            servicio = servicios()
-            cursor.execute("delete from Registros set Servicio ='"+servicio+"' where ID = '"+codigo+"'")
-            con.commit()
-            print("\n///////////////////////////////////////////////////////////////////////////////")
-            print("=====================REGISTRO MODIFICADO EXITOSAMENTE==========================")
-            print("///////////////////////////////////////////////////////////////////////////////")
-            input("\n---------------------Presione enter para regresar al menu----------------------")
-            os.system("cls")
-            con.close()
-            registro_menu()
-        elif(op == "8"):
-            registro_menu()
+        cursor.execute("delete from Registros where ID = '"+codigo+"'")
+        con.commit()
+        print("\n\n///////////////////////////////////////////////////////////////////////////////")
+        print("=====================REGISTRO ELIMINADO EXITOSAMENTE==========================")
+        print("///////////////////////////////////////////////////////////////////////////////")
+        input("\n---------------------Presione enter para regresar al menu----------------------")
+        os.system("cls")
+        con.close()
+        registro_menu()
+
 #========================================STAFF MEDICO==================================================================#
 def staff_medico():
     os.system("cls")
@@ -742,7 +659,6 @@ def servicios():
     while(op == "0"):
         print("////////////////////////////////////////////////////////////////////////////////")
         print("===========================SERVICIOS A REGISTRARSE==============================")
-        print("")
         print("\n 1.- {}\n 2.- {}\n 3.- {}\n 4.- {}\n 5.- {}\n 6.- {}\n 7.- {}\n 8.- {}\n 9.- {}\n 10.- {}\n 11.- {}\n 12.- {}\n 13.- {}\n 14.- {}\n 15.- {}\n 16.- {}\n 17.- {}\n 18.- {}\n 19.- {}\n 20.- {}".format(ser[0],ser[1],ser[2],ser[3],ser[4],ser[5],ser[6],ser[7],ser[8],ser[9],ser[10],ser[11],ser[12],ser[13],ser[14],ser[15],ser[16],ser[17],ser[18],ser[19]))
         op = str(input("\n\tINGRESE OPCCION : "))
         if op not in ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"]:

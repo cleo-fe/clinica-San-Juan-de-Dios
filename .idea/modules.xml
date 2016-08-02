@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/clinica-San-Juan-de-Dios.iml" filepath="$PROJECT_DIR$/.idea/clinica-San-Juan-de-Dios.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Proyecto/.idea/clinica-San-Juan-de-Dios.iml" filepath="$PROJECT_DIR$/../Proyecto/.idea/clinica-San-Juan-de-Dios.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../programacion/.idea/programacion.iml" filepath="$PROJECT_DIR$/../programacion/.idea/programacion.iml" />
     </modules>
   </component>
 </project>
