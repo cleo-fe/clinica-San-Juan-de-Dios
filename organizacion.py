@@ -14,7 +14,7 @@ def menu():
         print(" \n 1.- {}\n\n 2.- {}\n\n 3.- {}\n\n 4.- {}\n\n 5.- {}".format(opcion[0],opcion[1],opcion[2],opcion[3],opcion[4]))
         op = str(input("\nIngrese un opcion: "))
         if op not in ["1","2","3","4","5","6","7"]:
-            print("Opcion incorrecta, Vuelva a intentarlo...")
+            print("Opcion incorrecta, Vuelva a intentarlo.......")
             time.sleep(2)
             op = "0"
         os.system("cls")
