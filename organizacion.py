@@ -216,7 +216,9 @@ class Registro:
         apellidomaterno = str(input( "\n AELLIDO MATERNO:   " ))
         nombre = str(input("\n NOMBRE:   "))
         dni = str(input("\n D.N.I:   "))
-        edad = str(input("\n EDAD:   "))
+        edad =str(input("\n EDAD:   "))
+
+
         servicio = servicios()
         con = sqlite3.connect("pacientes.s3db")
         cursor = con.cursor()
@@ -284,8 +286,8 @@ class Registro:
 
         if (op == "1"):
             print("\n-------INGRESE DATOS A CONTINUACION------ ")
-            apellidopaterno = input( "\n Apellido Paterno:   " )
-            apellidomaterno = input( "\n Apellido Materno:   " )
+            apellidopaterno = input( "\n APELLIDO PATERNO:   " )
+            apellidomaterno = input( "\n APELLIDO MATERNO:   " )
             nombre = input("\n NOMBRE:   ")
             dni = input("\n NUMERO DE D.N.I:   ")
             edad = input("\n EDAD:   ")
@@ -301,7 +303,7 @@ class Registro:
             registro_menu()
         elif (op == "2"):
             print("\n-------INGRESE DATOS A CONTINUACION------ ")
-            apellidopaterno = input( "\n Apellido Paterno:   " )
+            apellidopaterno = input( "\n APELLIDO PATERNO:   " )
             cursor.execute("update Registros set ApellidoPaterno ='"+apellidopaterno+"' where ID = '"+codigo+"'")
             con.commit()
             print("\n///////////////////////////////////////////////////////////////////////////////")
@@ -313,7 +315,7 @@ class Registro:
             registro_menu()
         elif (op == "3"):
             print("\n-------INGRESE DATOS A CONTINUACION------ ")
-            apellidomaterno = input( "\n Apellido Materno:   " )
+            apellidomaterno = input( "\n APELLIDO MATERNO:   " )
             cursor.execute("update Registros set ApellidoMaterno ='"+apellidomaterno+"' where ID = '"+codigo+"'")
             con.commit()
             print("\n///////////////////////////////////////////////////////////////////////////////")
